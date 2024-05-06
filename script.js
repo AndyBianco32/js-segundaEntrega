@@ -1,105 +1,152 @@
-// Festi420 //// ChamiGrow20.4 +18
+let listaEntradas = [
+    { id: 2, nombre: "dia1", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 24, costo: 2700, rutaImagen: "entrada-dia1.jpeg"  },
+    { id: 3, nombre: "dia2", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 74, costo: 2800, rutaImagen: "entrada-dia2.jpeg" },
+    { id: 5, nombre: "dia3", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 68, costo: 2900, rutaImagen: "entrada-dia3.jpeg" },
+    { id: 7, nombre: "abono3dias", categoria: "tickets", tipoEntrada: "abonofull", disponibilidad : 0, costo: 6200, rutaImagen: "entrada-abonoFull.jpg" },
+    { id: 8, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 2", disponibilidad : 78, costo: 5000, rutaImagen: "abono-dia1y2.jpg" },
+    { id: 10, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 3", disponibilidad : 53, costo: 5100, rutaImagen: "abono-dia1y3.jpg" },
+    { id: 15, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 2 y 3", disponibilidad : 29, costo: 5300, rutaImagen: "abono-dia2y3.jpg" },
+]
 
-alert("Bienvenidos a la celebracion de FESTI420 2°Edicion!!")
 
-let nombre = prompt("Ingresa tu nombre").toUpperCase()
-alert("Bienvenido/a " + nombre + ". Actuamos con responsabilidad y te pedimos que ingreses tu edad, si tienes 18 años o mas, eres Bienvenido, sino para la proxima amigo/a..")
+principal(listaEntradas)
+function principal (entradas){
 
-let edad = Number(prompt("Ingresa tu edad"))
-const MAYORIAEDAD = 18
-if (edad >= MAYORIAEDAD) {
-    bienvenidoAlFesti()
-} else {
-    alert("Lo siento, aun no eres mayor de edad. Nos vemos en futuras ediciones. Hasta la proxima amigo/a!")
+    let carrito = []
+    let carritoLS = JSON.parse(localStorage.getItem("carrito"))
+    if (carritoLS){
+        carrito = carritoLS
+    } 
+    renderizarCarrito(carrito)
+
+
+    let botonBuscar = document.getElementById("botonBuscar")
+    botonBuscar.addEventListener("click", () => filtroyBusqueda(entradas, carrito))
+    filtrarentradas(entradas, carrito)
+
+}
+
+
+function filtroyBusqueda(entradas, carrito){
+    let entradasFiltradas = filtro(entradas)
+    filtrarentradas(entradasFiltradas, carrito)
+}
+
+function filtro(entradas){
+    let inputBusqueda = document.getElementById("inputBusqueda")
+    return entradas.filter(entrada => entrada.nombre.includes(inputBusqueda.value) || entrada.tipoEntrada.includes(inputBusqueda.value))
 }
 
 
 
-function bienvenidoAlFesti() {
-    alert("Te damos la bienvenida a una nueva edicion de este increible Festival")
+function filtrarentradas(entradas, carrito) {
 
-    let menu
+    let sectionEntradas = document.getElementById("sectionEntradas")
+    sectionEntradas.innerHTML = ""
 
-    do {
-        menu = Number(prompt("Te mostramos lo que tenemos para ti:\n 1 Entradas \n 2 Merchandise \n 3 Info Festival Grilla \n 4 Info festival Fechas y Horarios \n 5 Contacto \n 0 Salir"))
-        if (menu < 0 || menu > 6) {
-            alert("Opcion ingresada incorrecta")
-        } else if (menu === 1) {
-            compraentradas()
-        } else if (menu === 2) {
-            compramerchandise()
-        } else if (menu === 3) {
-            infogrilla()
-        } else if (menu === 4) {
-            infofechasyhorarios()
-        } else if (menu === 5) {
-            contactanos()
+    entradas.forEach(entrada => {
+        let tarjetaTicket = document.createElement("article")
+
+        let mensaje
+        if (entrada.disponibilidad < 30 && entrada.disponibilidad > 0){
+            tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad"
+            mensaje = " ultimas disponibles"
+        } else if (entrada.disponibilidad === 0){
+            // tarjetaTicket[4].remove()
+            tarjetaTicket.className = "ticketsEntradasAgotadas"
+            mensaje = "ENTRADAS AGOTADAS"
+        } else if (entrada.disponibilidad >= 30){
+            tarjetaTicket.className = "ticketsEntradas"
+            mensaje = "Disponibles :" + entrada.disponibilidad
         }
-    } while (menu !== 0)
-    alert("Gracias por visitarnos")
+
+        tarjetaTicket.innerHTML = `
+        <h3>${entrada.nombre}</h3>
+        <img src=./img/${entrada.rutaImagen} />
+        <p>Precio : ${entrada.costo}</p>
+        <p> ${mensaje} </p>
+        <button id=${entrada.id}>Agregar al carrito</button>
+        `
+     
+
+        sectionEntradas.appendChild(tarjetaTicket)
+        
+        let botonAC = document.getElementById(entrada.id)
+        botonAC.addEventListener("click", (e) => agregarCarrito(e, entradas, carrito))
+    });
+
 }
 
-function compraentradas() {
-    let entradas = [
-        { id: 2, nombre: "dia1", categoria: "tickets", tipoEntrada: "entrada diaria", costo: 2700 },
-        { id: 3, nombre: "dia2", categoria: "tickets", tipoEntrada: "entrada diaria", costo: 2800 },
-        { id: 5, nombre: "dia3", categoria: "tickets", tipoEntrada: "entrada diaria", costo: 2900 },
-        { id: 7, nombre: "abono3dias", categoria: "tickets", tipoEntrada: "abonofull", costo: 6200 },
-        { id: 8, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 2", costo: 5000 },
-        { id: 10, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 3", costo: 5100 },
-        { id: 15, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 2 y 3", costo: 5300 },
-    ]
+    function agregarCarrito(e, entradas, carrito){
 
-    alert("Te mostramos las entradas para cada dia y abonos combinados")
-    let salida = ""
-    entradas.forEach(tickets => {
-        salida= salida + tickets.id + " - " + tickets.nombre + " - " + tickets.tipoEntrada + "\n"
-    })
-    alert(salida)
+        let idDeEntrada = Number(e.target.id)
 
-   
-    function listar(entradas, propiedadid, propiedadnombre, propiedadtipo){
-        const resultado = entradas.map(producto => producto[propiedadid] + "-" + producto[propiedadnombre]+ "-" + producto[propiedadtipo]).join("\n")
-        return resultado
+        entradaEnCarrito = carrito.findIndex(entrada => entrada.id === idDeEntrada)
+        entradaBuscada = entradas.find(entrada => entrada.id === idDeEntrada)
+
+        if (entradaEnCarrito !== -1){
+            carrito[entradaEnCarrito].unidades++
+            carrito[entradaEnCarrito].subtotal = carrito[entradaEnCarrito].precioUnitario * carrito[entradaEnCarrito].unidades
+        } else {
+            carrito.push({
+                id: entradaBuscada.id,
+                nombre: entradaBuscada.nombre,
+                precioUnitario: entradaBuscada.costo,
+                unidades: 1,
+                subtotal: entradaBuscada.costo
+
+            })
+        }
+        
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+        renderizarCarrito(carrito)
     }
 
-    alert("Elige el tipo de entrada que deseas y averigua su precio")
-    let opcionTicket = Number(prompt(listar(entradas, "id", "nombre", "tipoEntrada")))
-    let entradaBuscada = entradas.find(tickets => tickets.id === opcionTicket)
-    alert(entradaBuscada.nombre + " - "+entradaBuscada.costo)
-}
+    function renderizarCarrito(carrito){
+        let contenedorCarrito = document.getElementById("contenedorCarrito")
+        contenedorCarrito.innerHTML= ""
 
+        carrito.forEach(entrada => {
+            let tarjetaEntradaCarrito = document.createElement("div")
+            tarjetaEntradaCarrito.className = "tarjetaEntradaCarrito"
+            tarjetaEntradaCarrito.id = `tarjetaEntradaCarrito${entrada.id}`
+
+            tarjetaEntradaCarrito.innerHTML = `
+            <h3>${entrada.nombre}</h3>
+            <p>${entrada.precioUnitario}</p>
+            <p>${entrada.unidades}</p>
+            <p>${entrada.subtotal}</p>
+            <button id=eliminar${entrada.id}>ELIMINAR</button>
+            `
+            contenedorCarrito.appendChild(tarjetaEntradaCarrito)
+
+            let botoneliminar = document.getElementById(`eliminar${entrada.id}`)
+            botoneliminar.addEventListener("click", (e) => eliminarTarjetaCarrito(carrito,e))
+        })
+
+    }
+
+    function eliminarTarjetaCarrito(carrito, e){
+        let id = Number(e.target.id.substring(8))
+        let filaAEliminar = document.getElementById(`tarjetaEntradaCarrito${id}`)
+        filaAEliminar.remove()
+    }
+
+
+
+
+/* let merchandise = [
+    { id: 1, nombre: "buzo", categoria: "indumentaria", color: "negro", precio: 3400 },
+    { id: 4, nombre: "buzo", categoria: "indumentaria", color: "blanco", precio: 3450 },
+    { id: 6, nombre: "gorra", categoria: "accesorios", color: "negra", precio: 2100 },
+    { id: 9, nombre: "campera", categoria: "indumentaria", color: "negro", precio: 4000 },
+    { id: 11, nombre: "llavero", categoria: "accesorios", color: "plata", precio: 1800 },
+    { id: 12, nombre: "remera", categoria: "indumentaria", color: "blanco", precio: 3000 },
+    { id: 13, nombre: "pulsera", categoria: "accesorios", color: "negra", precio: 1500 },
+    { id: 14, nombre: "encendedor", categoria: "accesorios", color: "negra", precio: 1700 },
+]
 function compramerchandise() {
-    let merchandise = [
-        { id: 1, nombre: "buzo", categoria: "indumentaria", color: "negro", precio: 3400 },
-        { id: 4, nombre: "buzo", categoria: "indumentaria", color: "blanco", precio: 3450 },
-        { id: 9, nombre: "gorra", categoria: "accesorios", color: "negra", precio: 2100 },
-        { id: 6, nombre: "campera", categoria: "indumentaria", color: "negro", precio: 4000 },
-        { id: 9, nombre: "llavero", categoria: "accesorios", color: "plata", precio: 1800 },
-        { id: 9, nombre: "remera", categoria: "indumentaria", color: "blanco", precio: 3000 },
-        { id: 9, nombre: "pulsera", categoria: "accesorios", color: "negra", precio: 1500 },
-        { id: 9, nombre: "encendedor", categoria: "accesorios", color: "negra", precio: 1700 },
-    ]
 
-    alert("Selecciona la categoria que tenemos para ti en Indumentaria y Accesorios")
-    let categoriaProducto = prompt("Elige cual de ambas categorias deseas ver").toLowerCase()
-    let productoFiltrado = merchandise.filter(producto => producto.categoria.toLowerCase().includes(categoriaProducto))
-    console.log(productoFiltrado)
+} */
 
-    for (const producto of productoFiltrado){
-        alert(producto.id + " - "+producto.nombre + " - " + "$" +producto.precio)
-    }
 
-}
-
-function infogrilla() {
-    alert("Los mejores DJs y bandas Musicales")
-}
-
-function infofechasyhorarios() {
-    alert("17, 18 y 19 de Mayo 2024")
-}
-
-function contactanos() {
-    alert("festivalchamigrow2024@gmail.com")
-}

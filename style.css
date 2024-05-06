@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ///////////////////////// Estilos del HEADER ////////////////////////////////// */
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background: rgb(58,235,21);
+    background: linear-gradient(0deg, rgba(58,235,21,1) 47%, rgba(124,136,40,0.99) 73%, rgba(208,11,123,1) 100%);
+}
+.nav {
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+   
+}
+li , a{
+    display: inline-block;
+    list-style: none;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    margin-left: 8px;
+
+}
+.navLinks {
+    margin-left: 310px;
+    padding-top: 30px;
+}
+.section1 {
+    width: 100%;
+    height: 85%;
+   
+}
+
+.tituloPortada{
+    margin-left: 600px;
+    padding-top: 200px;
+    color: white;
+}
+.subtituloPortada{
+    margin-left: 635px;
+    color: white;
+}
+
+
+
+/* ////////////////////////////// Estilos del MAIN //////////////////////////// */
+#sectionEntradas{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(178, 223, 178);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.ticketsEntradas {
+    border: thin solid black;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+ img {
+    width: 200px;
+ }
+.ticketsEntradas h3{
+    background-color: darksalmon;
+ } 
+
+.ticketsEntradasBajaDisponibilidad{
+    background-color: rgb(243, 122, 78);
+    border: thin solid black;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+ }
+.ticketsEntradasAgotadas{
+    background-color: rgb(215, 4, 4);
+    border: thin solid black;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+#contenedorCarrito{
+    border: 1px solid black;
+    width: 100%;
+    height: 150px;
+}
+.tarjetaEntradaCarrito{
+    display: flex;
+    justify-content: space-between;
+}
+
+#sectionMerchandise{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(160, 245, 111);
+}
