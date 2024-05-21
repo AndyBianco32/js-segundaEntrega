@@ -9,89 +9,894 @@
 #header {
     width: 100%;
     height: 100vh;
-    background: rgb(58,235,21);
-    background: linear-gradient(0deg, rgba(58,235,21,1) 47%, rgba(124,136,40,0.99) 73%, rgba(208,11,123,1) 100%);
 }
+#headerFestivalId,
+#headerNoticias,
+#headerEntradas,
+#headerContacto,
+#header21Junio,
+#header22Junio,
+#header23Junio{
+    width: 100%;
+    height: 400px;
+}
+
+.headerInicio{
+    background: linear-gradient(rgba( 5, 7, 12, 0.70), rgba( 5, 7, 12, 0.70)), url(img/IMG-FONDO1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.headerFestival{
+    background: linear-gradient(rgba( 5, 7, 12, 0.75), rgba( 5, 7, 12, 0.75)), url(img/FESTI\ 3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.headerNoticias{
+    background: linear-gradient(rgba( 5, 7, 12, 0.75), rgba( 5, 7, 12, 0.75)), url(img/CARD4.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.header21Junio{
+    background-color: rgb(247, 247, 19);
+}
+.header22Junio{
+    background-color: rgb(235, 80, 155);
+}
+.header23Junio{
+    background-color: rgb(13, 160, 5);
+}
+#bodyEntrada{
+    background: linear-gradient(rgba( 5, 7, 12, 0.75), rgba( 5, 7, 12, 0.65)), url(img/FESTI\ 5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+#bodyContacto{
+    background: linear-gradient(rgba( 5, 7, 12, 0.0), rgba( 5, 7, 12, 0.5)), url(img/MONO2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+
+}
+
 .nav {
     width: 100%;
     height: 15%;
-    /* border: 1px solid black; */
-    /* border-bottom: 1px solid black; */
-   
+    display: flex;  
+}
+.navFestival,
+.navNoticias,
+.navEntradas,
+.navContacto,
+.nav21Junio,
+.nav22Junio,
+.nav23Junio{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    
+}
+.nav21Junio li{
+    border-bottom: solid black 3px;
+    a{
+        color: black;
+        border-bottom: solid black 3px;  
+    }
+}
+.nav22Junio li{
+    border-bottom: solid black 3px;
+    a{
+        color: black;
+        border-bottom: solid black 3px;  
+    }
+}
+.nav23Junio li{
+    border-bottom: solid black 3px;
+    a{
+        color: black;
+        border-bottom: solid black 3px;  
+    }
+}
+.ahref{
+    border: transparent;
 }
 li , a{
     display: inline-block;
     list-style: none;
-    font-size: 28px;
+    font-size: 20px;
     text-decoration: none;
+    border-bottom: solid white 3px;
     color: white;
-    margin-left: 8px;
+    margin-left: 30px;
 
 }
 .navLinks {
-    margin-left: 310px;
-    padding-top: 30px;
+    margin-left: 130px;
+    padding-top: 70px;
 }
-.section1 {
-    width: 100%;
-    height: 85%;
-   
+.imglogo{
+    height: 120px;
+    width: 150px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-top: 30px;
+
 }
 
-.tituloPortada{
-    margin-left: 600px;
-    padding-top: 200px;
+/* ///////////////////// ESTILOS SECION PORTADAS ///////////// */
+.sectionPortadaInicio{
+    width: 100%;
+    height: 85%;
+    padding: 0px 340px;
     color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.subtituloPortada{
-    margin-left: 635px;
-    color: white;
+
+.grilla21,
+.grilla22,
+.grilla23{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        margin-top: 20px;
+        font-family: cursive;
+        font-size: 19px;
+    }
 }
+.grilla21-titulo,
+.grilla22-titulo,
+.grilla23-titulo {
+    margin: 20px;
+    font-family: cursive;
+    font-size: 30px;
+}
+.grilla21-titulo{
+    color: rgb(247, 247, 19);
+}
+.grilla22-titulo{
+    color: rgb(255, 0, 123);
+}
+.grilla23-titulo{
+    color: rgb(13, 160, 5);
+}
+
+.sectionPortadaFestival,
+.sectionPortadaNoticias,
+.sectionPortadaEntradas,
+.sectionPortadaContacto{
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    h1{
+        color: white;
+        font-size: 30px;
+        margin-top: 90px;
+    }
+}
+.sectionPortadaGrilla{
+    text-align: center;
+    margin-top: 90px;
+    h1{
+        font-size: 50px;
+        margin-left: 40px;
+    }
+}
+.href21junio{
+    background-color:  rgb(247, 247, 19) ;
+    width: 150px;
+    color: black;
+    font-weight: bolder;
+    border-bottom: none;
+}
+.href22junio{
+    background-color:   rgb(235, 80, 155);
+    width: 150px;
+    color: black;
+    font-weight: bolder;
+    border-bottom: none;
+}
+.href23junio{
+    background-color:  rgb(13, 160, 5);
+    width: 150px;
+    color: black;
+    font-weight: bolder;
+    border-bottom: none;
+}
+
+
+
 
 
 
 /* ////////////////////////////// Estilos del MAIN //////////////////////////// */
-#sectionEntradas{
+
+/* ///////////////////////ESTILO MAIN INICIO ////////////// */
+.diasGrilla{
+    width: 100%;
+    height: 290px;
+    display: flex;
+
+}
+.diasGrilla1,
+.diasGrilla2,
+.diasGrilla3{
+    width: 33.33%;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a{
+        font-size: 60px;
+        font-weight: bolder;
+        color: white;
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+.diasGrilla1{
+    background-color: rgb(247, 247, 19);
+}
+.diasGrilla2{
+    background-color: rgb(235, 80, 155);
+}
+.diasGrilla3{
+    background-color: rgb(13, 160, 5);
+}
+
+.secNoticias{
     width: 100%;
     height: 100vh;
-    background-color: rgb(178, 223, 178);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    
+
+}
+
+.secNoticiasImg{
+    width: 75%;
+    height: 350px;
+    /* margin: 0 auto; */
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.secNoticiasImg1,
+.secNoticiasImg2,
+.secNoticiasImg3,
+.secNoticiasImg4{
+    width: 220px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    p{
+        font-size: 20px;
+        font-weight: bolder;
+        color: white;
+        text-align: center;
+        padding-bottom: 15px;
+
+    }
+}
+.secNoticiasImg1{
+    background: linear-gradient(rgba( 5, 7, 12, 0.18), rgba( 5, 7, 12, 0.55)), url(img/Sara-Hebe-680x340.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.secNoticiasImg2{
+    background: linear-gradient(rgba( 5, 7, 12, 0.18), rgba( 5, 7, 12, 0.55)), url(img/MONO1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.secNoticiasImg3{
+    background: linear-gradient(rgba( 5, 7, 12, 0.18), rgba( 5, 7, 12, 0.55)), url(img/PITI-FERNANDEZ.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.secNoticiasImg4{
+    background: linear-gradient(rgba( 5, 7, 12, 0.18), rgba( 5, 7, 12, 0.55)), url(img/CHRISTOP\ ERRE.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cajaBoton{
+    width: 25%;
+    height: 50px;
+    border: 2px solid transparent;
+    background-color: rgb(225, 225, 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 19px;
+        font-weight: bolder;
+        a {
+            color: black;
+            border-bottom: none;
+        }
+    }
+}
+
+.otrosEventos {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(3, 3, 3);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.eventoFreestyle{
+    width: 49%;
+    height: 480px;
+    background: linear-gradient(rgba( 5, 7, 12, 0.70), rgba( 5, 7, 12, 0.75)), url(img/CARD1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 , p {
+        color: white;
+        padding: 10px 50px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+.eventoCharla{
+    width: 49%;
+    height: 480px;
+    background: linear-gradient(rgba( 5, 7, 12, 0.70), rgba( 5, 7, 12, 0.75)), url(img/MESA-DEBATE.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 , p {
+        color: white;
+        padding: 10px 50px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* ///////////////////////ESTILO MAIN FESTIVAL ////////////// */
+
+.sectionHistoriayEdicion{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba( 5, 7, 12, 1.0), rgba( 5, 7, 12, 0.85)), url(img/HUMO-CORAL.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.historia{
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.edicionesFestival{
+    width: 30%;
+    margin: 0 auto;
+    color: black;
+    font-size: 19px;
+    font-weight: bolder;
+    text-align: center;
+    border: 2px solid transparent;
+    padding: 5px;
+    background-color: rgb(225, 225, 4)
+}
+
+.infoAdicional{
+    width: 100%;
+    height: 920px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    h2 , p {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+}
+
+.accesoEspecial{
+    width: 100%;
+    height: 11%;
+    background-color: rgb(196, 101, 150);
+    text-align: center;
+    padding: 20px 80px;
+}
+.dondeQuedar{
+    width: 100%;
+    height: 11%;
+    background-color: rgb(196, 101, 150);
+    text-align: center;
+    padding: 20px 80px;
+}
+.comoLlegar{
+    width: 100%;
+    height: 26%;
+    background-color: rgb(196, 101, 150);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    div{
+        width: 45%;
+        h2 , p {
+            text-align: center;
+        }
+    }
+}
+.mapaIframe{
+    width: 550px;
+    height: 210px;
+}
+
+.recinto{
+    width: 100%;
+    height: 35%;
+    background-color: rgb(196, 101, 150);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    div{
+        width: 45%;
+        h2 , p {
+            text-align: center;
+        }
+    }
+}
+.imgRecinto{
+    width: 550px;
+    height: 290px;
+}
+
+/* ///////////////////////ESTILO MAIN NOTICIAS ////////////// */
+
+.grillaNoticias{
+    width: 100%;
+    height: 1950px;
+    padding: 45px;
+    background-color: black;
+    h3{
+        color: white;
+        text-align: center;
+    }
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% ;
+    grid-template-areas: 
+    "djMono        djMono        moguiller    moguiller   muchaSoul    muchaSoul    pitiFernandez   pitiFernandez"
+    "djMono        djMono        moguiller    moguiller   muchaSoul    muchaSoul    pitiFernandez   pitiFernandez"
+    "djMono        djMono        saraHebe     saraHebe    saraHebe     saraHebe     pitiFernandez   pitiFernandez"
+    "ChicosPortico ChicosPortico saraHebe     saraHebe    saraHebe     saraHebe     losEspiritus    losEspiritus"
+    "ChicosPortico ChicosPortico saraHebe     saraHebe    saraHebe     saraHebe     losEspiritus    losEspiritus"
+    "valhalla      valhalla      islaDeCara   islaDeCara  freestyle    freestyle    losEspiritus    losEspiritus"
+    "valhalla      valhalla      islaDeCara   islaDeCara  freestyle    freestyle    ecuanime        ecuanime"
+    "valhalla      valhalla      charlasCann  charlasCann charlasCann  charlasCann  ecuanime        ecuanime"
+    "mekala        mekala        charlasCann  charlasCann charlasCann  charlasCann  christopErre christopErre"
+    "mekala        mekala        charlasCann  charlasCann charlasCann  charlasCann  christopErre christopErre"
+    "cariesNuevas  cariesNuevas  cariesNuevas argon       argon        argon        christopErre christopErre"
+    "cariesNuevas  cariesNuevas  cariesNuevas argon       argon        argon        christopErre christopErre"
+    ;
+}
+
+.djMono{
+    grid-area: djMono;
+    background-image: url(img/MONO1.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+.moguiller{
+    grid-area: moguiller;
+    background-image: url(img/moguiller.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.muchaSoul{
+    grid-area: muchaSoul;
+    background-image: url(img/mushaSoul.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.pitiFernandez{
+    grid-area: pitiFernandez;
+    background-image: url(img/PITI-FERNANDEZ.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.saraHebe{
+    grid-area: saraHebe;
+    background-image: url(img/Sara-Hebe-680x340.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.ChicosPortico{
+    grid-area: ChicosPortico;
+    background-image: url(img/losChicosDelPortico.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.losEspiritus{
+    grid-area: losEspiritus;
+    background-image: url(img/losEspiritus.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.charlasCann{
+    grid-area: charlasCann;
+    background-image: url(img/MESA-DEBATE.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.freestyle{
+    grid-area: freestyle;
+    background-image: url(img/freestyle-rap.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.christopErre{
+    grid-area: christopErre;
+    background-image: url(img/CHRISTOP\ ERRE.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.ecuanime{
+    grid-area: ecuanime;
+    background-image: url(img/ecuanime.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.islaDeCara{
+    grid-area: islaDeCara;
+    background-image: url(img/islaDeCara.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.mekala{
+    grid-area: mekala;
+    background-image: url(img/mekala.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.valhalla {
+    grid-area: valhalla ;
+    background-image: url(img/valhalla.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.cariesNuevas{
+    grid-area: cariesNuevas;
+    background-image: url(img/cariesNuevas.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+.argon{
+    grid-area: argon;
+    background-image: url(img/argon.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+
+
+/* ///////////////////////ESTILO MAIN ENTRADA ////////////// */
+#sectionEntradas{
+    width: 100%;
+    height: 1500px;
+    /* background-color: rgb(178, 223, 178); */
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
 }
-.ticketsEntradas {
-    border: thin solid black;
+/* .ticketsEntradas { */
+    /* h3{
+        color: red;
+    } */
+    /* border: thin solid black;
+    width: 300px;
+    height: 300px;
     margin-left: 70px;
     margin-top: 15px;
     margin-bottom: 15px;
     padding-top: 15px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; */
+/* } */
  img {
-    width: 200px;
+    width: 100px;
  }
-.ticketsEntradas h3{
+/* .ticketsEntradas h3{
     background-color: darksalmon;
- } 
+ }  */
+
 
 .ticketsEntradasBajaDisponibilidad{
-    background-color: rgb(243, 122, 78);
-    border: thin solid black;
-    margin-left: 70px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-top: 15px;
+    color: rgb(253, 161, 13);
+    
+
+   
  }
 .ticketsEntradasAgotadas{
-    background-color: rgb(215, 4, 4);
+    color: red;
+    button{ display: none !important;
+
+    }
+}
+.ticketsdia1{
+    
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/CHRISTOP\ ERRE.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
     border: thin solid black;
+    border-radius: 5%;
     margin-left: 70px;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-top: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+}
+.ticketsdia2{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/MONO1.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+
+}
+.ticketsdia3{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/Sara-Hebe-680x340.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+
+}
+.ticketsdia1y2{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/christop-mono.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+
+}
+.ticketsdia1y3{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/christop-sara.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+}
+.ticketsdia2y3{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/mono-sara.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+
+}
+.ticketsdia1-2y3{
+    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/3artistas.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    width: 900px;
+    height: 350px;
+    border: thin solid black;
+    border-radius: 5%;
+    margin-left: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 55px;
+    font-size: 20px;
+    h3{
+        font-size: 38px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
 }
 
 #contenedorCarrito{
     border: 1px solid black;
+    background-color: burlywood;
     width: 100%;
     height: 150px;
 }
@@ -100,8 +905,145 @@ li , a{
     justify-content: space-between;
 }
 
-#sectionMerchandise{
+/* #sectionMerchandise{
     width: 100%;
     height: 100vh;
     background-color: rgb(160, 245, 111);
+} */
+
+
+/* ///////////////////////ESTILO MAIN CONTACTO ////////////// */
+
+
+.secContacto{
+    width: 100%;
+    height: 1330px;
+    color: white;
+    
+}
+
+.direccion,
+.contacto,
+.redesSoc{
+    width: 40%;
+    height: 200px;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+/* ///////////////////////ESTILO MAIN GRILLAS 21 22 Y 23 ////////////// */
+
+.mainGrillaJunio{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 70px;
+    h2{
+        font-size: 35px;
+    }
+    
+}
+.ordenGrilla{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 70px;
+    
+}
+.escenarioNorte21{
+    border: 1px solid rgb(247, 247, 19);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+.escenarioSur21{
+    border: 1px solid rgb(247, 247, 19);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+
+.escenarioNorte22{
+    border: 1px solid rgb(235, 80, 155);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+.escenarioSur22{
+    border: 1px solid rgb(235, 80, 155);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+.escenarioNorte23{
+    border: 1px solid rgb(13, 160, 5);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+.escenarioSur23{
+    border: 1px solid rgb(13, 160, 5);
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    h3{
+        font-size: 25px;
+    }
+}
+
+
+/* ///////////////////////ESTILO FOOTER ////////////// */
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: azure;
+}
+.divFooter{
+    display: flex;
+    flex-wrap: wrap;
+    p{
+        font-size: 20px;
+        margin: 20px 100px;
+       
+    }
 }

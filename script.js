@@ -1,11 +1,11 @@
 let listaEntradas = [
-    { id: 2, nombre: "dia1", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 24, costo: 2700, rutaImagen: "entrada-dia1.jpeg"  },
-    { id: 3, nombre: "dia2", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 74, costo: 2800, rutaImagen: "entrada-dia2.jpeg" },
-    { id: 5, nombre: "dia3", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 68, costo: 2900, rutaImagen: "entrada-dia3.jpeg" },
-    { id: 7, nombre: "abono3dias", categoria: "tickets", tipoEntrada: "abonofull", disponibilidad : 0, costo: 6200, rutaImagen: "entrada-abonoFull.jpg" },
-    { id: 8, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 2", disponibilidad : 78, costo: 5000, rutaImagen: "abono-dia1y2.jpg" },
-    { id: 10, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 1 y 3", disponibilidad : 53, costo: 5100, rutaImagen: "abono-dia1y3.jpg" },
-    { id: 15, nombre: "abono2dias", categoria: "tickets", tipoEntrada: "entrada dia 2 y 3", disponibilidad : 29, costo: 5300, rutaImagen: "abono-dia2y3.jpg" },
+    { id: 2, nombre: "21 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 24, costo: 2700, rutaImagen: "imgticket2.png"  },
+    { id: 3, nombre: "22 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 5, costo: 2800, rutaImagen: "imgticket2.png" },
+    { id: 5, nombre: "23 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 68, costo: 2900, rutaImagen: "imgticket2.png" },
+    { id: 8, nombre: "21 + 22 Junio", categoria: "tickets", tipoEntrada: "entrada dia 1 y 2", disponibilidad : 78, costo: 5000, rutaImagen: "imgticket2.png" },
+    { id: 10, nombre: "21 + 23 Junio", categoria: "tickets", tipoEntrada: "entrada dia 1 y 3", disponibilidad : 53, costo: 5100, rutaImagen: "imgticket2.png" },
+    { id: 15, nombre: "22 + 23 Junio", categoria: "tickets", tipoEntrada: "entrada dia 2 y 3", disponibilidad : 0, costo: 5300, rutaImagen: "imgticket2.png" },
+    { id: 7, nombre: "21 + 22 + 23 Junio", categoria: "tickets", tipoEntrada: "abonofull", disponibilidad : 0, costo: 6200, rutaImagen: "imgticket2.png" },
 ]
 
 
@@ -49,26 +49,108 @@ function filtrarentradas(entradas, carrito) {
 
         let mensaje
         if (entrada.disponibilidad < 30 && entrada.disponibilidad > 0){
-            tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad"
-            mensaje = " ultimas disponibles"
+            // tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad"
+            mensaje = "Ultimas disponibles"
         } else if (entrada.disponibilidad === 0){
             // tarjetaTicket[4].remove()
-            tarjetaTicket.className = "ticketsEntradasAgotadas"
-            mensaje = "ENTRADAS AGOTADAS"
+            // tarjetaTicket.className = "ticketsEntradasAgotadas"
+            mensaje = "ENTRADAS AGOTADAS" 
         } else if (entrada.disponibilidad >= 30){
-            tarjetaTicket.className = "ticketsEntradas"
+            // tarjetaTicket.className = "ticketsEntradas"
             mensaje = "Disponibles :" + entrada.disponibilidad
         }
 
         tarjetaTicket.innerHTML = `
         <h3>${entrada.nombre}</h3>
-        <img src=./img/${entrada.rutaImagen} />
-        <p>Precio : ${entrada.costo}</p>
+        <img src=../img/${entrada.rutaImagen} />
+        <p>$ ${entrada.costo}</p>
         <p> ${mensaje} </p>
         <button id=${entrada.id}>Agregar al carrito</button>
         `
-     
+        switch (entrada.nombre) {
+            case "21 Junio":
+                // tarjetaTicket.className = "ticketsdia1"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia1" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia1"
+                }
+                
+                break
+            case "22 Junio":
+                // tarjetaTicket.className = "ticketsdia2"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia2"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia2" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia2"
+                }
 
+                break;
+            case "23 Junio":
+                // tarjetaTicket.className = "ticketsdia3"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia3"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia3" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia3"
+                }
+    
+                break;
+            case "21 + 22 Junio":
+                // tarjetaTicket.className = "ticketsdia1y2"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1y2"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia1y2" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia1y2"
+                }
+        
+                break;
+            case "21 + 23 Junio":
+                // tarjetaTicket.className = "ticketsdia1y3"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1y3"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia1y3" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia1y3"
+                }
+            
+                break;
+            case "22 + 23 Junio":
+                // tarjetaTicket.className = "ticketsdia2y3"
+                if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia2y3"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia2y3" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia2y3"
+                }
+                
+                break;
+            case "21 + 22 + 23 Junio":
+                // tarjetaTicket.className = "ticketsdia1-2y3"
+                
+               if(mensaje === "Ultimas disponibles"){
+                    tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1-2y3"
+               } else if(mensaje === "ENTRADAS AGOTADAS"){
+                    tarjetaTicket.className = "ticketsEntradasAgotadas ticketsdia1-2y3" 
+                } else{
+                    tarjetaTicket.className = "ticketsdia1-2y3"
+                }
+                    
+                break;
+        
+            default:
+                break;
+        }
+        
         sectionEntradas.appendChild(tarjetaTicket)
         
         let botonAC = document.getElementById(entrada.id)
