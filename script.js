@@ -1,15 +1,4 @@
-let listaEntradas = [
-    { id: 2, nombre: "21 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 24, costo: 2700, rutaImagen: "imgticket2.png"  },
-    { id: 3, nombre: "22 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 5, costo: 2800, rutaImagen: "imgticket2.png" },
-    { id: 5, nombre: "23 Junio", categoria: "tickets", tipoEntrada: "entrada diaria", disponibilidad : 68, costo: 2900, rutaImagen: "imgticket2.png" },
-    { id: 8, nombre: "21 + 22 Junio", categoria: "tickets", tipoEntrada: "entrada dia 1 y 2", disponibilidad : 78, costo: 5000, rutaImagen: "imgticket2.png" },
-    { id: 10, nombre: "21 + 23 Junio", categoria: "tickets", tipoEntrada: "entrada dia 1 y 3", disponibilidad : 53, costo: 5100, rutaImagen: "imgticket2.png" },
-    { id: 15, nombre: "22 + 23 Junio", categoria: "tickets", tipoEntrada: "entrada dia 2 y 3", disponibilidad : 0, costo: 5300, rutaImagen: "imgticket2.png" },
-    { id: 7, nombre: "21 + 22 + 23 Junio", categoria: "tickets", tipoEntrada: "abonofull", disponibilidad : 0, costo: 6200, rutaImagen: "imgticket2.png" },
-]
 
-
-principal(listaEntradas)
 function principal (entradas){
 
     let carrito = obtenerCarritoLS() 
@@ -34,11 +23,14 @@ function verOcultar(e) {
     contenedorCarrito.classList.toggle("oculto")
     sectionEntradas.classList.toggle("oculto")
 
-    if (e.target.innerText === "VER CARRITO") {
-        e.target.innerText = "VER PRODUCTOS"
-    } else {
-        e.target.innerText = "VER CARRITO"
-    }
+    // if (e.target.innerText === "VER CARRITO") {
+    //     e.target.innerText = "VER PRODUCTOS"
+    // } else {
+    //     e.target.innerText = "VER CARRITO"
+    // }
+
+    e.target.innerText = e.target.innerText === "VER CARRITO" ? "VER PRODUCTOS" : "VER CARRITO"
+
 }
 
 function obtenerCarritoLS() {
@@ -53,6 +45,16 @@ function obtenerCarritoLS() {
 function finalizarCompra() {
     localStorage.removeItem("carrito")
     renderizarCarrito([])
+    Swal.fire({
+        title: 'COMPRA EXITOSA',
+        text: 'Tu compra se ha realizado con exito',
+        icon: 'success',
+        // confirmButtonText: 'ACEPTAR'
+        showConfirmButton: false,
+        timer: 2000,
+        color: "white",
+        background: "linear-gradient(rgba( 5, 7, 12, 0.80), rgba( 5, 7, 12, 0.80))",
+      })
     
 }
 
@@ -197,6 +199,23 @@ function filtrarentradas(entradas) {
         entradaEnCarrito = carrito.findIndex(entrada => entrada.id === idDeEntrada)
         entradaBuscada = entradas.find(entrada => entrada.id === idDeEntrada)
 
+        // Swal.fire({
+        //     title: "PERFECTO",
+        //     html: "Se ha agregado un producto a tu Carrito",
+        //     icon: "success",
+        //     showConfirmButton: false,
+        //     timer: 2000,
+        //     color: "white",
+        //     background: "linear-gradient(rgba( 5, 7, 12, 0.80), rgba( 5, 7, 12, 0.80))",
+        //   });
+          Toastify({
+            text: "Producto agregado al Carrito",
+            className: "info",
+            style: {
+              background: "linear-gradient(rgba( 5, 7, 12, 0.80), rgba( 5, 7, 12, 0.80))",
+            }
+          }).showToast();
+
         if (entradaEnCarrito !== -1){
             carrito[entradaEnCarrito].unidades++
             carrito[entradaEnCarrito].subtotal = carrito[entradaEnCarrito].precioUnitario * carrito[entradaEnCarrito].unidades
@@ -235,24 +254,52 @@ function filtrarentradas(entradas) {
             contenedorCarrito.appendChild(tarjetaEntradaCarrito)
 
             let botoneliminar = document.getElementById(`eliminar${entrada.id}`)
-            botoneliminar.addEventListener("click", (e) => eliminarTarjetaCarrito(carrito,e))
+            botoneliminar.addEventListener("click", (e) => eliminarTarjetaCarrito(e))
         })
 
     }
 
-    function eliminarTarjetaCarrito(carrito, e){
+    function eliminarTarjetaCarrito(e){
+        let carrito = obtenerCarritoLS() 
         let id = Number(e.target.id.substring(8))
-        let filaAEliminar = document.getElementById(`tarjetaEntradaCarrito${id}`)
-        filaAEliminar.remove()
+        // let filaAEliminar = document.getElementById(`tarjetaEntradaCarrito${id}`)
+        // filaAEliminar.remove()
+        carrito = carrito.filter(entrada => entrada.id !== id)
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+        e.target.parentElement.remove()
+        
     }
 
-// //////////////////////////////// NOTICIAS /////////////////////////////
+    // const pedirInfo = (todoOK) => {
+    //     return new Promise( (resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (todoOK) {
+    //                 resolve(listaEntradas)
+    //             } else {
+    //                 reject("ALGO SALIO MAL EN EL CAMINO")
+    //             }
+    //         }, 2000)
+    //     } )
+    // }
+    
+    // pedirInfo(true)
+    //     .then(info => {
+    //         principal(info)
+    //     })
+    //     .catch(error => {
+    //         console.log(error)
+    //     })
+    //     .finally(() => console.log("FIN"))
+    
+
+function pedirInfo(){
+    fetch("../data.json")
+    .then(response => response.json())
+    .then(entradas => principal(entradas))
+    
+}
+pedirInfo()
 
 
-// let textoGrilla = document.getElementById("textoGrilla")
-// textoGrilla.addEventListener("mouseover", mostrartexto)
 
-// function mostrartexto(){
-//     // textoGrilla.className = "saraHebeOpcional"
-//     console.log("probando");
-// }
+ 

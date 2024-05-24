@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
+
 <body id="bodyEntrada">
     <header id="headerEntradas" class="headerEntrada">
         <nav class="navEntradas">
 
-            <a href="#" class="ahref"><img class="imglogo" src="../img/CHAMIGROW`24 (1).png" alt="Logo Chamigrow"</a>
+            <a href="#" class="ahref"><img class="imglogo" src="../img/CHAMIGROW`24 (1).png" alt="Logo Chamigrow" </a>
 
-            <ul class="navLinks">
-                <li><a href="../index.html">A LA FILA</a></li>
-                <li><a href="../page/festival.html">FESTIVAL</a></li>
-                <li><a href="../page/noticias.html">NOTICIAS</a></li>
-                <li><a href="#">ENTRADAS</a></li>
-                <li><a href="../page/contacto.html">CONTACTOS</a></li>
-            </ul>
+                <ul class="navLinks">
+                    <li><a href="../index.html">A LA FILA</a></li>
+                    <li><a href="../page/festival.html">FESTIVAL</a></li>
+                    <li><a href="../page/noticias.html">NOTICIAS</a></li>
+                    <li><a href="#">ENTRADAS</a></li>
+                    <li><a href="../page/contacto.html">CONTACTOS</a></li>
+                </ul>
         </nav>
         <section class="sectionPortadaEntradas">
             <h1>ENTRADAS</h1>
@@ -26,20 +29,21 @@
 
     </header>
     <main>
+        <input id="inputBusqueda" placeholder="Buscar su entrada">
+        <button id="botonBuscar">Buscar</button>
+
         <section id="sectionEntradas">
 
         </section>
 
-        <input id="inputBusqueda" placeholder="Buscar su entrada">
 
-        <button id="botonBuscar">Buscar</button>
         <button id="botonVerOcultar">VER CARRITO</button>
 
+        <button id="botonComprar">COMPRAR</button>
 
         <div class="oculto" id="contenedorCarrito"></div>
 
-        <button id="botonComprar">COMPRAR</button>
-        
+
     </main>
     <footer class="footer">
         <h2>SPONSOR</h2>
@@ -57,7 +61,11 @@
 
     </footer>
 
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="../luxon.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="../script.js"></script>
 </body>
+
 </html>
