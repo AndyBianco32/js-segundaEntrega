@@ -529,10 +529,27 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
+    h3 , p {
+        display: none;
+    }
+    
+}
+.djMonoOpcional{
+    grid-area: djMono;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/MONO1.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
+    
 }
 .moguiller{
     grid-area: moguiller;
@@ -543,7 +560,27 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
 }
+.moguillerOpcional{
+    grid-area: moguiller;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/moguiller.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
+}
+
 .muchaSoul{
     grid-area: muchaSoul;
     background-image: url(img/mushaSoul.jpg);
@@ -553,7 +590,27 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
 }
+.muchaSoulOpcional{
+    grid-area: muchaSoul;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/mushaSoul.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
+}
+
 .pitiFernandez{
     grid-area: pitiFernandez;
     background-image: url(img/PITI-FERNANDEZ.jpg);
@@ -563,6 +620,25 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.pitiFernandezOpcional{
+    grid-area: pitiFernandez;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/PITI-FERNANDEZ.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 .saraHebe{
     grid-area: saraHebe;
@@ -573,6 +649,25 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.saraHebeOpcional{
+    grid-area: saraHebe;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/Sara-Hebe-680x340.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 30px;
+    }
 }
 .ChicosPortico{
     grid-area: ChicosPortico;
@@ -583,16 +678,25 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
 }
-.losEspiritus{
-    grid-area: losEspiritus;
-    background-image: url(img/losEspiritus.jpeg);
+.ChicosPorticoOpcional{
+    grid-area: ChicosPortico;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/losChicosDelPortico.jpg);
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover;
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 .charlasCann{
     grid-area: charlasCann;
@@ -603,6 +707,25 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.charlasCannOpcional{
+    grid-area: charlasCann;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/MESA-DEBATE.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 .freestyle{
     grid-area: freestyle;
@@ -611,28 +734,56 @@ li , a{
     background-position: top;
     background-size: cover;
     margin: 10px;
-    padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
 }
-.christopErre{
-    grid-area: christopErre;
-    background-image: url(img/CHRISTOP\ ERRE.jpg);
+.freestyleOpcional{
+    grid-area: freestyle;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/freestyle-rap.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 20px 30px;
+        }
 }
-.ecuanime{
-    grid-area: ecuanime;
-    background-image: url(img/ecuanime.jpeg);
+.losEspiritus{
+    grid-area: losEspiritus;
+    background-image: url(img/losEspiritus.jpeg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+
+.losEspiritusOpcional{
+    grid-area: losEspiritus;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)),url(img/losEspiritus.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 .islaDeCara{
     grid-area: islaDeCara;
@@ -643,6 +794,26 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+
+.islaDeCaraOpcional{
+    grid-area: islaDeCara;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/islaDeCara.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 30px;
+        }
 }
 .mekala{
     grid-area: mekala;
@@ -653,16 +824,83 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
 }
-.valhalla {
-    grid-area: valhalla ;
-    background-image: url(img/valhalla.jpeg);
+.mekalaOpcional{
+    grid-area: mekala;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/mekala.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 30px;
+        }
+}
+.christopErre{
+    grid-area: christopErre;
+    background-image: url(img/CHRISTOP\ ERRE.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.christopErreOpcional{
+    grid-area: christopErre;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/CHRISTOP\ ERRE.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
+}
+.ecuanime{
+    grid-area: ecuanime;
+    background-image: url(img/ecuanime.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.ecuanimeOpcional{
+    grid-area: ecuanime;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/ecuanime.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 30px;
+        }
 }
 .cariesNuevas{
     grid-area: cariesNuevas;
@@ -673,6 +911,25 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.cariesNuevasOpcional{
+    grid-area: cariesNuevas;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/cariesNuevas.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 .argon{
     grid-area: argon;
@@ -683,6 +940,56 @@ li , a{
     margin: 10px;
     padding: 5px;
     border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+    
+}
+.argonOpcional{
+    grid-area: argon;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/argon.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
+    
+}
+.valhalla {
+    grid-area: valhalla ;
+    background-image: url(img/valhalla.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        display: none;
+    }
+}
+.valhallaOpcional {
+    grid-area: valhalla ;
+    background: linear-gradient(rgba( 5, 7, 12, 0.55), rgba( 5, 7, 12, 0.55)), url(img/valhalla.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    h3 , p {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 30px;
+        }
 }
 
 
@@ -736,7 +1043,7 @@ li , a{
 }
 .ticketsdia1{
     
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/CHRISTOP\ ERRE.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/CHRISTOP\ ERRE.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -749,6 +1056,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -758,7 +1066,7 @@ li , a{
     justify-content: space-around
 }
 .ticketsdia2{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/MONO1.jpeg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/MONO1.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -771,6 +1079,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -781,7 +1090,7 @@ li , a{
 
 }
 .ticketsdia3{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/Sara-Hebe-680x340.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/Sara-Hebe-680x340.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -794,6 +1103,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -804,7 +1114,7 @@ li , a{
 
 }
 .ticketsdia1y2{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/christop-mono.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/christop-mono.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -817,6 +1127,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -827,7 +1138,7 @@ li , a{
 
 }
 .ticketsdia1y3{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/christop-sara.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/christop-sara.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -840,6 +1151,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -849,7 +1161,7 @@ li , a{
     justify-content: space-around
 }
 .ticketsdia2y3{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/mono-sara.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/mono-sara.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -862,6 +1174,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -872,7 +1185,7 @@ li , a{
 
 }
 .ticketsdia1-2y3{
-    background: linear-gradient(rgba(241, 243, 246, 0.7), rgba( 5, 7, 12, 0.75)), url(img/3artistas.jpg);
+    background: linear-gradient(rgba(241, 243, 246, 0.6), rgba( 5, 7, 12, 0.85)), url(img/3artistas.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -885,6 +1198,7 @@ li , a{
     margin-bottom: 15px;
     padding-top: 55px;
     font-size: 20px;
+    box-shadow: 0px 15px 20px rgb(254, 252, 252, 0.50);
     h3{
         font-size: 38px;
     }
@@ -903,6 +1217,10 @@ li , a{
 .tarjetaEntradaCarrito{
     display: flex;
     justify-content: space-between;
+}
+
+.oculto {
+    display: none !important;
 }
 
 /* #sectionMerchandise{

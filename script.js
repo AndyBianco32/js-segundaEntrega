@@ -12,24 +12,54 @@ let listaEntradas = [
 principal(listaEntradas)
 function principal (entradas){
 
-    let carrito = []
-    let carritoLS = JSON.parse(localStorage.getItem("carrito"))
-    if (carritoLS){
-        carrito = carritoLS
-    } 
-    renderizarCarrito(carrito)
+    let carrito = obtenerCarritoLS() 
+    renderizarCarrito()
 
 
     let botonBuscar = document.getElementById("botonBuscar")
-    botonBuscar.addEventListener("click", () => filtroyBusqueda(entradas, carrito))
-    filtrarentradas(entradas, carrito)
+    botonBuscar.addEventListener("click", () => filtroyBusqueda(entradas,))
+    filtrarentradas(entradas)
 
+    let botonVerOcultar = document.getElementById("botonVerOcultar")
+    botonVerOcultar.addEventListener("click", verOcultar)
+
+    let botonComprar = document.getElementById("botonComprar")
+    botonComprar.addEventListener("click", finalizarCompra)
+}
+
+function verOcultar(e) {
+    let contenedorCarrito = document.getElementById("contenedorCarrito")
+    let sectionEntradas = document.getElementById("sectionEntradas")
+
+    contenedorCarrito.classList.toggle("oculto")
+    sectionEntradas.classList.toggle("oculto")
+
+    if (e.target.innerText === "VER CARRITO") {
+        e.target.innerText = "VER PRODUCTOS"
+    } else {
+        e.target.innerText = "VER CARRITO"
+    }
+}
+
+function obtenerCarritoLS() {
+    let carrito = []
+    let carritoLS = JSON.parse(localStorage.getItem("carrito"))
+    if (carritoLS) {
+        carrito = carritoLS
+    }
+    return carrito
+}
+
+function finalizarCompra() {
+    localStorage.removeItem("carrito")
+    renderizarCarrito([])
+    
 }
 
 
-function filtroyBusqueda(entradas, carrito){
+function filtroyBusqueda(entradas){
     let entradasFiltradas = filtro(entradas)
-    filtrarentradas(entradasFiltradas, carrito)
+    filtrarentradas(entradasFiltradas)
 }
 
 function filtro(entradas){
@@ -39,8 +69,9 @@ function filtro(entradas){
 
 
 
-function filtrarentradas(entradas, carrito) {
+function filtrarentradas(entradas) {
 
+    let carrito = obtenerCarritoLS()
     let sectionEntradas = document.getElementById("sectionEntradas")
     sectionEntradas.innerHTML = ""
 
@@ -154,13 +185,13 @@ function filtrarentradas(entradas, carrito) {
         sectionEntradas.appendChild(tarjetaTicket)
         
         let botonAC = document.getElementById(entrada.id)
-        botonAC.addEventListener("click", (e) => agregarCarrito(e, entradas, carrito))
+        botonAC.addEventListener("click", (e) => agregarCarrito(e, entradas))
     });
 
 }
 
-    function agregarCarrito(e, entradas, carrito){
-
+    function agregarCarrito(e, entradas){
+        let carrito = obtenerCarritoLS()
         let idDeEntrada = Number(e.target.id)
 
         entradaEnCarrito = carrito.findIndex(entrada => entrada.id === idDeEntrada)
@@ -184,7 +215,8 @@ function filtrarentradas(entradas, carrito) {
         renderizarCarrito(carrito)
     }
 
-    function renderizarCarrito(carrito){
+    function renderizarCarrito(){
+        let carrito = obtenerCarritoLS()
         let contenedorCarrito = document.getElementById("contenedorCarrito")
         contenedorCarrito.innerHTML= ""
 
@@ -214,21 +246,13 @@ function filtrarentradas(entradas, carrito) {
         filaAEliminar.remove()
     }
 
+// //////////////////////////////// NOTICIAS /////////////////////////////
 
 
+// let textoGrilla = document.getElementById("textoGrilla")
+// textoGrilla.addEventListener("mouseover", mostrartexto)
 
-/* let merchandise = [
-    { id: 1, nombre: "buzo", categoria: "indumentaria", color: "negro", precio: 3400 },
-    { id: 4, nombre: "buzo", categoria: "indumentaria", color: "blanco", precio: 3450 },
-    { id: 6, nombre: "gorra", categoria: "accesorios", color: "negra", precio: 2100 },
-    { id: 9, nombre: "campera", categoria: "indumentaria", color: "negro", precio: 4000 },
-    { id: 11, nombre: "llavero", categoria: "accesorios", color: "plata", precio: 1800 },
-    { id: 12, nombre: "remera", categoria: "indumentaria", color: "blanco", precio: 3000 },
-    { id: 13, nombre: "pulsera", categoria: "accesorios", color: "negra", precio: 1500 },
-    { id: 14, nombre: "encendedor", categoria: "accesorios", color: "negra", precio: 1700 },
-]
-function compramerchandise() {
-
-} */
-
-
+// function mostrartexto(){
+//     // textoGrilla.className = "saraHebeOpcional"
+//     console.log("probando");
+// }
