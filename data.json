@@ -58,7 +58,7 @@
         "nombre": "21 + 22 + 23 Junio",
         "categoria": "tickets",
         "tipoEntrada": "abonofull",
-        "disponibilidad": 0,
+        "disponibilidad": 9,
         "costo": 6200,
         "rutaImagen": "imgticket2.png"
     }

@@ -5,8 +5,8 @@ function principal (entradas){
     renderizarCarrito()
 
 
-    let botonBuscar = document.getElementById("botonBuscar")
-    botonBuscar.addEventListener("click", () => filtroyBusqueda(entradas,))
+    let bBusqueda = document.getElementById("bBusqueda")
+    bBusqueda.addEventListener("click", () => filtroyBusqueda(entradas,))
     filtrarentradas(entradas)
 
     let botonVerOcultar = document.getElementById("botonVerOcultar")
@@ -22,12 +22,6 @@ function verOcultar(e) {
 
     contenedorCarrito.classList.toggle("oculto")
     sectionEntradas.classList.toggle("oculto")
-
-    // if (e.target.innerText === "VER CARRITO") {
-    //     e.target.innerText = "VER PRODUCTOS"
-    // } else {
-    //     e.target.innerText = "VER CARRITO"
-    // }
 
     e.target.innerText = e.target.innerText === "VER CARRITO" ? "VER PRODUCTOS" : "VER CARRITO"
 
@@ -49,15 +43,12 @@ function finalizarCompra() {
         title: 'COMPRA EXITOSA',
         text: 'Tu compra se ha realizado con exito',
         icon: 'success',
-        // confirmButtonText: 'ACEPTAR'
         showConfirmButton: false,
         timer: 2000,
         color: "white",
         background: "linear-gradient(rgba( 5, 7, 12, 0.80), rgba( 5, 7, 12, 0.80))",
-      })
-    
+      })    
 }
-
 
 function filtroyBusqueda(entradas){
     let entradasFiltradas = filtro(entradas)
@@ -68,8 +59,6 @@ function filtro(entradas){
     let inputBusqueda = document.getElementById("inputBusqueda")
     return entradas.filter(entrada => entrada.nombre.includes(inputBusqueda.value) || entrada.tipoEntrada.includes(inputBusqueda.value))
 }
-
-
 
 function filtrarentradas(entradas) {
 
@@ -82,14 +71,10 @@ function filtrarentradas(entradas) {
 
         let mensaje
         if (entrada.disponibilidad < 30 && entrada.disponibilidad > 0){
-            // tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad"
             mensaje = "Ultimas disponibles"
         } else if (entrada.disponibilidad === 0){
-            // tarjetaTicket[4].remove()
-            // tarjetaTicket.className = "ticketsEntradasAgotadas"
             mensaje = "ENTRADAS AGOTADAS" 
         } else if (entrada.disponibilidad >= 30){
-            // tarjetaTicket.className = "ticketsEntradas"
             mensaje = "Disponibles :" + entrada.disponibilidad
         }
 
@@ -102,7 +87,6 @@ function filtrarentradas(entradas) {
         `
         switch (entrada.nombre) {
             case "21 Junio":
-                // tarjetaTicket.className = "ticketsdia1"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -113,7 +97,6 @@ function filtrarentradas(entradas) {
                 
                 break
             case "22 Junio":
-                // tarjetaTicket.className = "ticketsdia2"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia2"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -124,7 +107,6 @@ function filtrarentradas(entradas) {
 
                 break;
             case "23 Junio":
-                // tarjetaTicket.className = "ticketsdia3"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia3"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -135,7 +117,6 @@ function filtrarentradas(entradas) {
     
                 break;
             case "21 + 22 Junio":
-                // tarjetaTicket.className = "ticketsdia1y2"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1y2"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -146,7 +127,6 @@ function filtrarentradas(entradas) {
         
                 break;
             case "21 + 23 Junio":
-                // tarjetaTicket.className = "ticketsdia1y3"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1y3"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -157,7 +137,6 @@ function filtrarentradas(entradas) {
             
                 break;
             case "22 + 23 Junio":
-                // tarjetaTicket.className = "ticketsdia2y3"
                 if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia2y3"
                } else if(mensaje === "ENTRADAS AGOTADAS"){
@@ -168,7 +147,6 @@ function filtrarentradas(entradas) {
                 
                 break;
             case "21 + 22 + 23 Junio":
-                // tarjetaTicket.className = "ticketsdia1-2y3"
                 
                if(mensaje === "Ultimas disponibles"){
                     tarjetaTicket.className = "ticketsEntradasBajaDisponibilidad ticketsdia1-2y3"
@@ -177,7 +155,6 @@ function filtrarentradas(entradas) {
                 } else{
                     tarjetaTicket.className = "ticketsdia1-2y3"
                 }
-                    
                 break;
         
             default:
@@ -199,15 +176,6 @@ function filtrarentradas(entradas) {
         entradaEnCarrito = carrito.findIndex(entrada => entrada.id === idDeEntrada)
         entradaBuscada = entradas.find(entrada => entrada.id === idDeEntrada)
 
-        // Swal.fire({
-        //     title: "PERFECTO",
-        //     html: "Se ha agregado un producto a tu Carrito",
-        //     icon: "success",
-        //     showConfirmButton: false,
-        //     timer: 2000,
-        //     color: "white",
-        //     background: "linear-gradient(rgba( 5, 7, 12, 0.80), rgba( 5, 7, 12, 0.80))",
-        //   });
           Toastify({
             text: "Producto agregado al Carrito",
             className: "info",
@@ -262,35 +230,11 @@ function filtrarentradas(entradas) {
     function eliminarTarjetaCarrito(e){
         let carrito = obtenerCarritoLS() 
         let id = Number(e.target.id.substring(8))
-        // let filaAEliminar = document.getElementById(`tarjetaEntradaCarrito${id}`)
-        // filaAEliminar.remove()
         carrito = carrito.filter(entrada => entrada.id !== id)
         localStorage.setItem("carrito", JSON.stringify(carrito))
         e.target.parentElement.remove()
         
     }
-
-    // const pedirInfo = (todoOK) => {
-    //     return new Promise( (resolve, reject) => {
-    //         setTimeout(() => {
-    //             if (todoOK) {
-    //                 resolve(listaEntradas)
-    //             } else {
-    //                 reject("ALGO SALIO MAL EN EL CAMINO")
-    //             }
-    //         }, 2000)
-    //     } )
-    // }
-    
-    // pedirInfo(true)
-    //     .then(info => {
-    //         principal(info)
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //     })
-    //     .finally(() => console.log("FIN"))
-    
 
 function pedirInfo(){
     fetch("../data.json")

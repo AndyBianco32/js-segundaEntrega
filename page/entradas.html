@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
@@ -28,20 +29,29 @@
         </section>
 
     </header>
-    <main>
-        <input id="inputBusqueda" placeholder="Buscar su entrada">
-        <button id="botonBuscar">Buscar</button>
+    <main id="mainEntrada">
+        <article class="secBotones">
+            <div>
+                <input id="inputBusqueda" placeholder="Buscar su entrada">
+                <button id="bBusqueda">Buscar</button>
+    
+            </div>
+            <div>
+                    <button id="botonVerOcultar">VER CARRITO</button>
+                    <div id="divCarrito">
+                        <button id="botonComprar">COMPRAR</button>
+                        
+                        <div class="oculto" id="contenedorCarrito"></div>
+                    </div>
+        
+            </div>
 
+        </article>
         <section id="sectionEntradas">
 
         </section>
 
 
-        <button id="botonVerOcultar">VER CARRITO</button>
-
-        <button id="botonComprar">COMPRAR</button>
-
-        <div class="oculto" id="contenedorCarrito"></div>
 
 
     </main>
